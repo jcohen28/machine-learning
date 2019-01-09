@@ -25,7 +25,8 @@ p = zeros(size(X, 1), 1);
 X = [ones(m, 1) X];
 
 a2 = [ones(m, 1) sigmoid(X * Theta1')];
-[a3, p] = max(sigmoid(a2 * Theta2'), [], 2);
+a3 = sigmoid(a2 * Theta2');
+[prediction, p] = max(a3, [], 2);
 
 
 
